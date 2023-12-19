@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Toxins from './Toxins';
+import Preferences from './Preferences';
 
 function App() {
   const [pets, setPets] = useState([]);

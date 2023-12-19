@@ -4,6 +4,8 @@ function Preferences({ savePreferences }) {
   const [species, setSpecies] = useState('');
   const [breed, setBreed] = useState('');
   const [preferences, setPreferences] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
 
   useEffect(() => {
     const fetchPreferences = async () => {
@@ -17,6 +19,8 @@ function Preferences({ savePreferences }) {
         setSpecies(data.species || '');
         setBreed(data.breed || '');
         setPreferences(data.preferences || '');
+        setCity(data.city || '');
+        setState(data.state || '');
       } catch (error) {
         console.error(error);
       }
@@ -37,9 +41,18 @@ function Preferences({ savePreferences }) {
     setPreferences(e.target.value);
   };
 
+  const handleCityChange = (e) => {
+    setCity(e.target.value);
+  };
+
+  const handleStateChange = (e) => {
+    setState(e.target.value);
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    savePreferences({ species, breed, preferences });
+    savePreferences({ species, breed, preferences, city, state });
   };
 
   return (
@@ -58,7 +71,17 @@ function Preferences({ savePreferences }) {
         <br />
         <label>
           Save your search preferences:
-          <input type="text" value={preferences} onChange={handleChange} />
+          <input type="text" value={preferences} onChange={handlePreferencesChange} />
+        </label>
+        <br />
+        <label>
+          City:
+          <input type="text" value={city} onChange={handleCityChange} />
+        </label>
+        <br />
+        <label>
+          State:
+          <input type="text" value={state} onChange={handleStateChange} />
         </label>
         <br />
         <button type="submit">Save Preferences</button>

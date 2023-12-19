@@ -2,7 +2,9 @@ CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  city VARCHAR(255),
+  state VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS preferences (
