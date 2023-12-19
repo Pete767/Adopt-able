@@ -1,4 +1,3 @@
 adoptable-pets-app/.env
 create_tables.sql
-node_modules
-/client/node_modules
+
