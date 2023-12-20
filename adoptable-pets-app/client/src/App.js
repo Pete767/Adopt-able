@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Toxins from './Toxins';
 import Preferences from './Preferences';
@@ -136,7 +136,7 @@ function App() {
             )}
           </ul>
         </nav>
-        <Switch>
+        <Routes>
           <Route path="/toxins">
             <Toxins />
           </Route>
@@ -167,7 +167,7 @@ function App() {
           </ul>
         )}
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </Router>
     );
